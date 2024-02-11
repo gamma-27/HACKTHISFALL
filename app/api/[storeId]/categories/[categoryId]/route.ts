@@ -58,6 +58,9 @@ export async function DELETE(
     const category = await prismadb.category.delete({
       where: {
         id: params.categoryId,
+      },
+      include:{
+        billboard:true,
       }
     });
   
